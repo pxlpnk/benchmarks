@@ -47,17 +47,26 @@ describe PrefixSum do
   end
 
   describe "benchmark" do
+
     before do
       @p = PrefixSum.new(10)
     end
 
     it "responds to benchmark" do
+      skip("too verbose")
       @p.must_respond_to "benchmark"
     end
 
     it "returns an array with the benchmark results" do
+      skip("too verbose")
       benchmark = @p.benchmark
       benchmark.count.must_equal 3
+    end
+
+    it "returns a hash with the benchmark results" do
+      skip("too verbose")
+      benchmark = @p.benchmark
+      benchmark.must_be_instance_of Hash
     end
   end
 end
