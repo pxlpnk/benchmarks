@@ -11,7 +11,7 @@ class PrefixSum
 
   def initialize(n)
     self.length = n
-    self.list = (1..n)
+    self.list = (1..n).to_a
   end
 
 
