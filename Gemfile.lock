@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (4.5.0)
+    minitest-matchers (1.2.0)
+      minitest (>= 2.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest-matchers
