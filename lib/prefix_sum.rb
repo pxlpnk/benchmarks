@@ -48,12 +48,11 @@ class PrefixSum
   # Run benchmark for all algorithms
 
   def benchmark
-    Benchmark.benchmark(" "*7 + CAPTION, 7, nil, ">total:", ">avg:") do |x|
-      tf = x.report("reduce")   { self.reduce }
-      tt = x.report("inject") { self.inject_reduce}
-      tu = x.report("iterate:")  { self.iterate_reduce}
-      [tf+tt+tu, (tf+tt+tu)/3]
+    benchmark = Benchmark.bmbm do |x|
+      x.report("reduce")   { self.reduce }
+      x.report("inject") { self.inject_reduce}
+      x.report("iterate:")  { self.iterate_reduce}
     end
-    nil
+    benchmark
   end
 end

@@ -6,7 +6,9 @@ GEM
       minitest (>= 2.5.0)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
+  minitest
   minitest-matchers

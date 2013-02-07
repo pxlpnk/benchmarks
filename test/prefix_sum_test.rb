@@ -17,7 +17,7 @@ describe PrefixSum do
     end
 
     it "is of the type array" do
-      @p.list.class.must_equal Array
+      @p.list.must_be_instance_of Array
     end
   end
 
@@ -43,6 +43,21 @@ describe PrefixSum do
     it "has an inject_reduce function" do
       result = @p.inject_reduce
       result.must_equal @ref
+    end
+  end
+
+  describe "benchmark" do
+    before do
+      @p = PrefixSum.new(10)
+    end
+
+    it "responds to benchmark" do
+      @p.must_respond_to "benchmark"
+    end
+
+    it "returns an array with the benchmark results" do
+      benchmark = @p.benchmark
+      benchmark.count.must_equal 3
     end
   end
 end
