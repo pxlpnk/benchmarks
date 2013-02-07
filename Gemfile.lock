@@ -1,7 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    growl (1.0.3)
     minitest (4.5.0)
+    minitest-growl (0.0.3)
+      growl
+      minitest
     minitest-matchers (1.2.0)
       minitest (>= 2.5.0)
 
@@ -11,4 +15,5 @@ PLATFORMS
 
 DEPENDENCIES
   minitest
+  minitest-growl
   minitest-matchers
