@@ -2,7 +2,6 @@ require "prefix_sum"
 
 describe PrefixSum do
   describe "on creation" do
-
     before do
       @n = 10
       @p = PrefixSum.new(@n)
@@ -22,4 +21,28 @@ describe PrefixSum do
     end
   end
 
+  describe "as an algorithm" do
+    before do
+      @n = 10
+      @p = PrefixSum.new(@n)
+      @ref = @p.reduce
+    end
+
+    it "has a reduce function" do
+      reference = 0
+      @p.list.each {|elem| reference =  reference + elem }
+      result = @p.reduce
+      result.must_equal reference
+    end
+
+    it "has an iterate_reduce function" do
+      result = @p.iterate_reduce
+      result.must_equal @ref
+    end
+
+    it "has an inject_reduce function" do
+      result = @p.inject_reduce
+      result.must_equal @ref
+    end
+  end
 end
