@@ -2,10 +2,7 @@ Dir[File.dirname(__FILE__) + '/*.rb'].each do |file|
   require file
 end
 
-require 'benchmark'
 class PrefixSum
-  include Benchmark         # we need the CAPTION and FMTSTR constants
-  include Benchmark
   attr_accessor :list, :length
 
   ##
@@ -52,12 +49,6 @@ class PrefixSum
   def benchmark(function)
     Benchmarks.time_method do
       self.send(function)
-    end
-  end
-
-  def test
-    Benchmarks.time_method do
-      self.iterate_reduce
     end
   end
 end
