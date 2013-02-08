@@ -2,7 +2,7 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each do |file|
   require file
 end
 
-require 'rdoc/task'
+
 
 
 task :default => [:test]
@@ -14,12 +14,13 @@ task :benchmark do
 end
 
 
+require 'rdoc/task'
 desc 'generate API documentation to doc/rdocs/index.html'
 Rake::RDocTask.new do |rd|
   rd.rdoc_dir = 'doc/rdocs'
   rd.main = 'README.md'
 #   rd.rdoc_files.include 'README.md' , 'CHANGELOG.txt', "config/**/*\.rb", "helpers/**/*\.rb", "script/**/*\.rb"a
-  rd.rdoc_files.include 'README.md'
+  rd.rdoc_files.include 'README.md', "lib/*.rb"
   rd.options << '--inline-source'
   rd.options << '--line-numbers'
   rd.options << '--all'
@@ -28,8 +29,8 @@ Rake::RDocTask.new do |rd|
 end
 
 
-require 'rake/testtask'
 
+require 'rake/testtask'
 Rake::TestTask.new do |t|
   t.test_files = FileList[ "test/test_helper.rb", 'test/*_test.rb']
   t.verbose = true
