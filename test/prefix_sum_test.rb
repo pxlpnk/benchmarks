@@ -8,7 +8,7 @@ describe PrefixSum do
     end
 
     it "has a list of length n" do
-      @p.length.must_equal @n
+      @p.list.length.must_equal @n
     end
 
     it "has 1..n elements with the id as value" do
@@ -53,20 +53,17 @@ describe PrefixSum do
     end
 
     it "responds to benchmark" do
-      skip("too verbose")
       @p.must_respond_to "benchmark"
     end
 
-    it "returns an array with the benchmark results" do
-      skip("too verbose")
-      benchmark = @p.benchmark
-      benchmark.count.must_equal 3
+    it "returns the benchmark time as positive float" do
+      benchmark = @p.benchmark :reduce
+      benchmark.must_be_instance_of Float
+      benchmark.must_be :>, 0
     end
 
-    it "returns a hash with the benchmark results" do
-      skip("too verbose")
-      benchmark = @p.benchmark
-      benchmark.must_be_instance_of Hash
+    it "takes a function as symbol, calls it doesn't fail" do
+      benchmark = @p.benchmark :reduce
     end
   end
 end

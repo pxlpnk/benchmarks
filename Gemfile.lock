@@ -1,8 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ansi (1.4.3)
     growl (1.0.3)
     minitest (4.5.0)
+    minitest-ansi (0.1.1)
+      ansi (~> 1.4.0)
+      minitest (~> 4.3)
     minitest-growl (0.0.3)
       growl
       minitest
@@ -15,5 +19,6 @@ PLATFORMS
 
 DEPENDENCIES
   minitest
+  minitest-ansi
   minitest-growl
   minitest-matchers
