@@ -27,7 +27,6 @@ describe MatrixVectorMultiplication do
           [5,6]]
 
         mv_l.matrix.must_equal ref_matrix
-
       end
 
     end
@@ -48,6 +47,20 @@ describe MatrixVectorMultiplication do
       it "is of the type array" do
         @mv.vector.must_be_instance_of Array
       end
+    end
+  end
+
+  describe "as an algorithm" do
+    before do
+      @m = 3
+      @n = 2
+      @v = 2
+      @mv = MatrixVectorMultiplication.new(@m, @n, @v)
+    end
+
+    it "has a product function" do
+      ref = [5, 11, 17]
+      @mv.product.must_equal ref
     end
   end
 end

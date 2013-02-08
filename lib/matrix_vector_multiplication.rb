@@ -23,5 +23,16 @@ class MatrixVectorMultiplication
   end
 
 
+  def product
+    result = []
+    self.matrix.each do |row|
+      res_l = 0
+      row.zip(self.vector).each do |m,v|
+        res_l = res_l + (  m * v )
+      end
+      result << res_l
+    end
+    result
+  end
 
 end
