@@ -2,8 +2,7 @@ Dir[File.dirname(__FILE__) + '/*.rb'].each do |file|
   require file
 end
 
-module Benchmarks
-
+module RubyBenchmarks
   def self.time_method(method=nil, *args)
     beginning_time = Time.now
     if block_given?

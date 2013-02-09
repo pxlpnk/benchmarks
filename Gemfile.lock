@@ -3,6 +3,8 @@ GEM
   specs:
     ansi (1.4.3)
     growl (1.0.3)
+    json (1.7.6)
+    json (1.7.6-java)
     minitest (4.5.0)
     minitest-ansi (0.1.1)
       ansi (~> 1.4.0)
@@ -13,6 +15,9 @@ GEM
     minitest-matchers (1.2.0)
       minitest (>= 2.5.0)
     multi_json (1.3.7)
+    rake (10.0.3)
+    rdoc (3.12.1)
+      json (~> 1.4)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -27,4 +32,6 @@ DEPENDENCIES
   minitest-ansi
   minitest-growl
   minitest-matchers
+  rake
+  rdoc
   simplecov

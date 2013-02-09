@@ -1,7 +1,3 @@
-Dir[File.dirname(__FILE__) + '/*.rb'].each do |file|
-  require file
-end
-
 class PrefixSum
   attr_accessor :list, :length
 
@@ -47,7 +43,7 @@ class PrefixSum
   # Run benchmark for all algorithms
 
   def benchmark(function)
-    Benchmarks.time_method do
+    RubyBenchmarks.time_method do
       self.send(function)
     end
   end

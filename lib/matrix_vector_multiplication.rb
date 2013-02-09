@@ -35,4 +35,9 @@ class MatrixVectorMultiplication
     result
   end
 
+  def benchmark(function)
+    RubyBenchmarks.time_method do
+      self.send(function)
+    end
+  end
 end

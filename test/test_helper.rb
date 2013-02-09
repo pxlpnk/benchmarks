@@ -4,7 +4,6 @@ require 'minitest/autorun'
 require 'minitest/matchers'
 require 'minitest/growl_notify'
 
-
 if ENV['COVERAGE']
     require 'simplecov'
   SimpleCov.start do
@@ -14,3 +13,8 @@ if ENV['COVERAGE']
 end
 
 MiniTest::ANSI.use!
+
+
+Dir[File.dirname(__FILE__) + '/*.rb'].each do |file|
+  require file
+end
