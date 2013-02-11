@@ -49,7 +49,7 @@ describe PrefixSum do
   describe "benchmark" do
 
     before do
-      @p = PrefixSum.new(10)
+      @p = PrefixSum.new(1000)
     end
 
     it "responds to benchmark" do
@@ -59,7 +59,7 @@ describe PrefixSum do
     it "returns the benchmark time as positive float" do
       benchmark = @p.benchmark :reduce
       benchmark.must_be_instance_of Float
-      benchmark.must_be :>, 0
+      benchmark.must_be :>, 0.0
     end
 
     it "takes a function as symbol, calls it doesn't fail" do
