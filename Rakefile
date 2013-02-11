@@ -6,7 +6,7 @@ Dir.glob('tasks/*.rake').each { |r| import r }
 
 task :default => [:test]
 
-puts "ruby-version: #{RUBY_VERSION}"
+puts "ruby-version: #{RUBY_VERSION}-#{RUBY_PATCHLEVEL}"
 case RUBY_VERSION
 when "1.8.7"
   require 'rdoc/task'
